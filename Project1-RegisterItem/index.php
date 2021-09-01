@@ -1,5 +1,5 @@
 <?php
-/* require "dbconn.php"; */
+require "dbconn.php";
 
 
 
@@ -19,7 +19,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="bg-light">
 
   <header class='text-white bg-dark mb-5'>
     <div class='container p-2'>
@@ -30,22 +30,9 @@
   </header>
 
   <?php if ($dbconn) : ?>
-    <div class="modal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">MySQL Info</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Connected to MySQL using "project1" database</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
+      <div class="container p-2 bg-success bg-opacity-50 text-light" style="width: 30em;">
+        <h5 align="center">Database terhubung</h5>
       </div>
-    </div>
   <?php endif ?>
 
   <!-- Form Registrasi -->
