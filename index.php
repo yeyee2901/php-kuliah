@@ -1,3 +1,9 @@
+<?php
+require 'dbconn.php';
+
+/* var_dump(select_all('article_list')) */
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +29,15 @@
       </h1>
     </div>
   </header>
+
+  <div class="container mb-5">
+    <h2>Daftar Project</h2>
+    <div class='list-group' style='width: 20em;'>
+      <a class="list-group-item list-group-item-action border" href="Project1-RegisterItem/">
+        Project 1 - Form Registrasi & Database
+      </a>
+    </div>
+  </div>
 
 
   <!-- Bootstrap -->
