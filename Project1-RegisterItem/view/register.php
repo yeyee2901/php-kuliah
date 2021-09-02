@@ -54,7 +54,7 @@ require "../dbconn.php";
       </div>
 
       <div class="mb-3">
-        <a href="index.php" style="text-decoration: none;">
+        <a href="../index.php" style="text-decoration: none;">
           <button type="button" id="back-button" class="btn btn-secondary">Back</button>
         </a>
 
