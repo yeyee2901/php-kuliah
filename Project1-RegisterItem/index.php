@@ -1,8 +1,9 @@
 <?php
-require "dbconn.php";
 require "model/search.php";
+require "dbconn.php";
 
 if (isset($_POST["search"])) {
+  $results = search_database($dbconn, $_POST["search_query"], $_POST["category"]);
 }
 
 ?>
@@ -65,11 +66,26 @@ if (isset($_POST["search"])) {
     <a href="view/register.php" style="text-decoration: none;">
       <button type="button" class="btn btn-primary">Register New Item</button>
     </a>
-    <!-- Daftar Item -->
-    <div class="container">
 
-    </div>
   </div>
+
+
+  <!-- Daftar Item -->
+  <?php if (isset($results)) : ?>
+    <div class="container mt-3">
+      <h1 align="center">Hasil Pencarian</h1>
+      <table class="table table-striped">
+        <?php foreach ($results as $res) : ?>
+          <tr>
+            <td><?= $res["nama"] ?></td>
+            <td><?= $res["email"] ?></td>
+            <td><?= $res["domisili"] ?></td>
+          </tr>
+        <?php endforeach ?>
+        </tbody>
+      </table>
+    </div>
+  <?php endif ?>
 
 
   <!-- Bootstrap -->
