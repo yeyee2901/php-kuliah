@@ -1,11 +1,3 @@
-<?php
-require "dbconn.php";
-
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +21,11 @@ require "dbconn.php";
     </div>
   </header>
 
-
+  <div class='container'>
+    <a href="view/register.php" style="text-decoration: none;">
+      <button type="button" class="btn btn-primary">Register New Item</button>
+    </a>
+  </div>
 
   <!-- Daftar Item -->
   <div class="container">

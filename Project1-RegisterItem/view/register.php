@@ -1,10 +1,5 @@
 <?php
-require "dbconn.php";
-
-if (isset($_POST["register"])) {
-  $pressed = true;
-}
-
+require "../dbconn.php";
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +37,7 @@ if (isset($_POST["register"])) {
       </div>
     <?php endif ?>
 
-    <form action="" method="post" accept-charset="utf-8">
+    <form action="../model/register.php" method="post" accept-charset="utf-8">
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
         <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com" <?= $dbconn ? '' : 'disabled'; ?>>
@@ -58,35 +53,39 @@ if (isset($_POST["register"])) {
         <input type="text" class="form-control" name="domisili" id="domisili" placeholder="Contoh: Surabaya" <?= $dbconn ? '' : 'disabled'; ?>>
       </div>
 
-      <!-- Hanya akan ada jika status database OK -->
-      <?php if ($dbconn) : ?>
-        <div class="mb-3">
+      <div class="mb-3">
+        <a href="index.php" style="text-decoration: none;">
+          <button type="button" id="back-button" class="btn btn-secondary">Back</button>
+        </a>
+
+        <!-- Hanya akan ada jika status database OK -->
+        <?php if ($dbconn) : ?>
           <button id="confirm-button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirm-modal">
             Add
           </button>
-        </div>
+        <?php endif ?>
+      </div>
 
-        <!-- Confirmation Modal -->
-        <div class="modal fade" id="confirm-modal" tabindex="-1" aria-labelledby="confirm-modal" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
+      <!-- Confirmation Modal -->
+      <div class="modal fade" id="confirm-modal" tabindex="-1" aria-labelledby="confirm-modal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
 
-              <div class="modal-header">
-                <!-- Set via dynamically via javascript-->
-                <h5 class="modal-title" id="confirm-modal-label"></h5>
-              </div>
+            <div class="modal-header">
+              <!-- Set dynamically via javascript-->
+              <h5 class="modal-title" id="confirm-modal-label"></h5>
+            </div>
 
-              <!-- Set via dynamically via javascript-->
-              <div class="modal-body">
-              </div>
+            <!-- Set dynamically via javascript-->
+            <div class="modal-body">
+            </div>
 
-              <!-- Set via dynamically via javascript-->
-              <div class="modal-footer">
-              </div>
+            <!-- Set dynamically via javascript-->
+            <div class="modal-footer">
             </div>
           </div>
         </div>
-      <?php endif ?>
+      </div>
 
     </form>
   </div>
@@ -96,8 +95,8 @@ if (isset($_POST["register"])) {
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-  <!-- Untuk interaksi dengan modal dialog -->
-  <script src="javascript/get-data.js"></script>
+  <!-- Untuk interaksi dengan confirmation dialog -->
+  <script src="js/confirmation-dialog.js"></script>
 
 </body>
 
