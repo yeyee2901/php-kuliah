@@ -1,6 +1,9 @@
 <?php
 require "../dbconn.php";
 
+// to send success state
+session_start();
+
 $table_name = "daftar_nama";
 $email = $_POST["email"];
 $nama = $_POST["nama"];
@@ -18,8 +21,10 @@ VALUES (
 mysqli_query($dbconn, $query_string);
 
 if (mysqli_affected_rows($dbconn) > 0) {
-  echo "Berhasil ditambahkan";
-}else{
-  echo "Gagal ditambahkan!";
+  $_SESSION["register_status"] = true;
+} else {
+  $_SESSION["register_status"] = false;
 }
-/* header("Location: ../view/register.php"); */
+
+// Redirect
+header("Location: ../view/register.php");

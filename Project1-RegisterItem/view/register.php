@@ -1,5 +1,6 @@
 <?php
 require "../dbconn.php";
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -88,6 +89,19 @@ require "../dbconn.php";
       </div>
 
     </form>
+
+    <?php if (isset($_SESSION["register_status"])) : ?>
+      <?php if ($_SESSION["register_status"]) : ?>
+        <div class="container p-2 alert alert-success text-dark border border-success" style="width: 100%;">
+          <h5 align="center">Data berhasil ditambahkan</h5>
+        </div>
+      <?php else : ?>
+        <div class="container p-2 alert alert-danger text-dark" style="width: 100%;">
+          <h5 align="center">Data gagal ditambahkan</h5>
+        </div>
+      <?php endif ?>
+      <?php session_destroy(); ?>
+    <?php endif ?>
   </div>
 
 
