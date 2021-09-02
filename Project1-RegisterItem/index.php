@@ -29,35 +29,44 @@ require "dbconn.php";
     </div>
   </header>
 
-  <?php if ($dbconn) : ?>
-      <div class="container p-2 bg-success bg-opacity-50 text-light" style="width: 30em;">
-        <h5 align="center">Database terhubung</h5>
-      </div>
-  <?php endif ?>
 
   <!-- Form Registrasi -->
-  <div class="container p-3 border border-2" style="width: 30em;">
+  <div class="container p-3 border border-2" style="width: 300px;">
+    <?php if ($dbconn) : ?>
+      <div class="container p-2 bg-success bg-opacity-50 text-light" style="width: 100%;">
+        <h5 align="center">Database terhubung</h5>
+      </div>
+      <?php $disabled = ''; ?>
+    <?php else : ?>
+      <div class="container p-2 bg-danger bg-opacity-50 text-light" style="width: 100%;">
+        <h5 align="center">Koneksi Database Error</h5>
+      </div>
+      <?php $disabled = 'disabled'; ?>
+    <?php endif ?>
+
     <form action="register.php" method="post" accept-charset="utf-8">
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
-        <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com">
+        <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com" <?= $disabled; ?>>
       </div>
 
       <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>
-        <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama...">
+        <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama..." <?= $disabled; ?>>
       </div>
 
       <div class="mb-3">
         <label for="domisili" class="form-label">Kota Domisili</label>
-        <input type="text" class="form-control" name="domisili" id="domisili" placeholder="Contoh: Surabaya">
+        <input type="text" class="form-control" name="domisili" id="domisili" placeholder="Contoh: Surabaya" <?= $disabled; ?>>
       </div>
 
+      <?php if ($dbconn): ?>
       <div class="mb-3">
         <button type="submit" class="btn btn-primary" name="register" id="register">
           Register
         </button>
       </div>
+      <?php endif ?>
     </form>
   </div>
 

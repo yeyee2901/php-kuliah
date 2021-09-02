@@ -1,9 +1,3 @@
-<?php
-require 'dbconn.php';
-
-/* var_dump(select_all('article_list')) */
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
