@@ -5,9 +5,11 @@ require "../dbconn.php";
 session_start();
 
 $table_name = "daftar_nama";
-$email = $_POST["email"];
-$nama = $_POST["nama"];
-$domisili = $_POST["domisili"];
+
+// To escape pesky html tags
+$email = htmlspecialchars($_POST["email"]);
+$nama = htmlspecialchars($_POST["nama"]);
+$domisili = htmlspecialchars($_POST["domisili"]);
 
 $query_string = "
 INSERT INTO $table_name (email, nama, domisili) 

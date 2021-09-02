@@ -1,3 +1,11 @@
+<?php
+require "dbconn.php";
+require "model/search.php";
+
+if (isset($_POST["search"])) {
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +17,8 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="index.css" type="text/css" media="all">
 </head>
 
 <body class="bg-light">
@@ -21,16 +31,46 @@
     </div>
   </header>
 
-  <div class='container'>
+
+  <!-- Search form -->
+  <div id="search-form" class='container p-2 border border-secondary border-2'>
+
+    <form class="mb-3" action="" method="post" accept-charset="utf-8">
+
+      <!-- Search Query -->
+      <div class="mb-3">
+        <label for="search_query">Cari di database:</label>
+        <input type="text" class="form-control" name="search_query" id="search_query" placeholder="Ex: Peter">
+      </div>
+
+      <!-- Search category-->
+      <div class="mb-3">
+        <label for="category">Search by:</label>
+        <select class="form-select" id="category" name="category">
+          <option value="All" selected>All</option>
+          <option value="Nama">Nama</option>
+          <option value="Email">Email</option>
+          <option value="Domisili">Domisili</option>
+        </select>
+      </div>
+
+      <!-- Button -->
+      <div class="mb-3 col-sm">
+        <button type="submit" class="btn btn-success" name="search" id="search-button">
+          Search
+        </button>
+      </div>
+    </form>
+
     <a href="view/register.php" style="text-decoration: none;">
       <button type="button" class="btn btn-primary">Register New Item</button>
     </a>
+    <!-- Daftar Item -->
+    <div class="container">
+
+    </div>
   </div>
 
-  <!-- Daftar Item -->
-  <div class="container">
-
-  </div>
 
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
