@@ -7,6 +7,7 @@ if (isset($_POST["search"])) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +23,7 @@ if (isset($_POST["search"])) {
   <link rel="stylesheet" href="index.css" type="text/css" media="all">
 </head>
 
-<body class="bg-light">
+<body>
 
   <header class='text-white bg-dark mb-5'>
     <div class='container p-2'>
