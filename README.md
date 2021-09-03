@@ -1,4 +1,4 @@
-# Personal Website
+# Personal Portofolio
 Kumpulan project hasil pembelajaran dari kuliah Pemrograman Web semester 7.
 * Author: Yeye
 * Univ: Widya Mandala Surabaya
