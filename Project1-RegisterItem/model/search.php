@@ -1,6 +1,9 @@
 <?php
-function search_database($dbconn, $search_query, $category)
+require_once "dbconn.php";
+
+function search_database($search_query, $category)
 {
+  global $dbconn;
   $table_name = "daftar_nama";
 
   $category = strtolower($category);
@@ -25,7 +28,7 @@ function search_database($dbconn, $search_query, $category)
     $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
     return $result;
   } else {
-    echo "<h1>QUERY ERROR</h1>";
+    echo "<h1>DATABASE ERROR</h1>";
     echo mysqli_error($dbconn);
     return false;
   }

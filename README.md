@@ -1,9 +1,11 @@
 # Personal Website
-Personal website hasil pembelajaran dari kuliah Pemrograman Web semester 7.
+Kumpulan project hasil pembelajaran dari kuliah Pemrograman Web semester 7.
+* Author: Yeye
+* Univ: Widya Mandala Surabaya
 
 # Technologies
 * LAMP Stack
-* PHP 7.4
+* Vanilla PHP 7.4 (no framework, might try to use Laravel towards the end of semester though)
 * [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 * MySQL
 

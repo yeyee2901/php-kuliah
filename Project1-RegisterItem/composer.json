@@ -1,13 +1,12 @@
 {
     "name": "yeyee2901/project1-register-item",
-    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    },
     "authors": [
         {
             "name": "yeyee2901",
             "email": "yhxzen2901@gmail.com"
         }
-    ],
-    "require": {
-        "vlucas/phpdotenv": "^5.3"
-    }
+    ]
 }

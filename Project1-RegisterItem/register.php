@@ -1,6 +1,9 @@
 <?php
-require "../dbconn.php";
-session_start();
+require_once "model/register.php";
+
+if (isset($_POST["register"])) {
+  $success = register($_POST);
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +41,7 @@ session_start();
       </div>
     <?php endif ?>
 
-    <form action="../model/register.php" method="post" accept-charset="utf-8">
+    <form action="" method="post" accept-charset="utf-8">
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
         <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com" <?= $dbconn ? '' : 'disabled'; ?>>
@@ -55,7 +58,7 @@ session_start();
       </div>
 
       <div class="mb-3">
-        <a href="../index.php" style="text-decoration: none;">
+        <a href="index.php" style="text-decoration: none;">
           <button type="button" id="back-button" class="btn btn-secondary">Back</button>
         </a>
 
@@ -90,8 +93,8 @@ session_start();
 
     </form>
 
-    <?php if (isset($_SESSION["register_status"])) : ?>
-      <?php if ($_SESSION["register_status"]) : ?>
+    <?php if (isset($success)) : ?>
+      <?php if ($success) : ?>
         <div class="container p-2 alert alert-success text-dark border border-success" style="width: 100%;">
           <h5 align="center">Data berhasil ditambahkan</h5>
         </div>

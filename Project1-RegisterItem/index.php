@@ -1,9 +1,8 @@
 <?php
 require "model/search.php";
-require "dbconn.php";
 
 if (isset($_POST["search"])) {
-  $results = search_database($dbconn, $_POST["search_query"], $_POST["category"]);
+  $results = search_database($_POST["search_query"], $_POST["category"]);
 }
 
 ?>
@@ -20,7 +19,7 @@ if (isset($_POST["search"])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="index.css" type="text/css" media="all">
+  <link rel="stylesheet" href="css/index.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -35,7 +34,7 @@ if (isset($_POST["search"])) {
 
 
   <!-- Search form -->
-  <div id="search-form" class='container p-2 border border-secondary border-2'>
+  <div id="search-form" class='container p-2 border border-secondary border-2' style="width: 500px;">
 
     <form class="mb-3" action="" method="post" accept-charset="utf-8">
 
@@ -64,7 +63,7 @@ if (isset($_POST["search"])) {
       </div>
     </form>
 
-    <a href="view/register.php" style="text-decoration: none;">
+    <a href="register.php" style="text-decoration: none;">
       <button type="button" class="btn btn-primary">Register New Item</button>
     </a>
 
