@@ -1,5 +1,5 @@
 <?php
-require "model/search.php";
+require "control/search.php";
 
 if (isset($_POST["search"])) {
   $results = search_database($_POST["search_query"], $_POST["category"]);
