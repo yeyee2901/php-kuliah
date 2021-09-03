@@ -34,7 +34,7 @@ if (isset($_POST["search"])) {
 
 
   <!-- Search form -->
-  <div id="search-form" class='container p-2 border border-secondary border-2' style="width: 500px;">
+  <div id="search-form" class='container p-2 border border-secondary border-2' style="width: 300px;">
 
     <form class="mb-3" action="" method="post" accept-charset="utf-8">
 
@@ -72,7 +72,7 @@ if (isset($_POST["search"])) {
 
   <!-- Daftar Item -->
   <?php if (isset($results)) : ?>
-    <div class="container mt-3">
+    <div id="search-result" class="container mt-3 mb-3" style="width: 600px;">
       <h1 align="center">Hasil Pencarian</h1>
       <table class="table table-striped">
         <?php foreach ($results as $res) : ?>

@@ -105,7 +105,6 @@ if (isset($_POST["register"])) {
           <h5 align="center">Data gagal ditambahkan</h5>
         </div>
       <?php endif ?>
-      <?php session_destroy(); ?>
     <?php endif ?>
   </div>
 

@@ -10,14 +10,14 @@ function search_database($search_query, $category)
 
 
   $query_string = ($category === "all") ?
-    " SELECT * FROM $table_name
+    "SELECT * FROM $table_name
        WHERE
         nama LIKE '%$search_query%' OR
         email LIKE '%$search_query%' OR
         domisili LIKE '%$search_query%'
     " :
     "SELECT * FROM $table_name 
-    WHERE
+       WHERE
         $category LIKE '%$search_query%'
     ";
 
