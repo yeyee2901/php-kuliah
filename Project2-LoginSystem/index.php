@@ -4,38 +4,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>yeyee2901 Web</title>
+  <title>Login</title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
 </head>
-
 
 <body>
 
   <!-- Header -->
   <header class='text-white bg-dark mb-5'>
     <div class='container p-2'>
-      <h1>
-        HOME - Yeyee2901
+      <h1 align='center'>
+        Login System Sederhana dengan PHP-MySQL-Bootstrap5
       </h1>
     </div>
   </header>
 
-  <div class="container mb-5">
-    <h2>Daftar Project</h2>
-    <div class='list-group' style='width: 20em;'>
-      <a class="list-group-item list-group-item-action border" href="Project1-RegisterItem/">
-        Project 1 - Form Registrasi & Database
-      </a>
-    </div>
-    <div class='list-group' style='width: 20em;'>
-      <a class="list-group-item list-group-item-action border" href="Project2-LoginSystem/">
-        Project 2 - Login System
-      </a>
-    </div>
+  <!-- Login -->
+  <div>
+    
   </div>
 
 

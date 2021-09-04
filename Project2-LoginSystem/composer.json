@@ -1,0 +1,13 @@
+{
+    "name": "yeyee2901/project2-login-system",
+    "type": "project",
+    "authors": [
+        {
+            "name": "yeyee2901",
+            "email": "yhxzen2901@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
